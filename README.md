@@ -36,13 +36,15 @@ pharma_project/
 ├── manage.py
 └── pharma_project/      # Main settings and URL configuration
 
-🔧 Getting Started (Local Setup)
-1. Clone the project:
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/pharma-supply-chain.git
-cd pharma-supply-chain
+## 🔧 Getting Started (Local Setup)
+# 1. Clone the project:
+```bash
+git clone https://github.com/DevOps-With-Hammad/Pharma.git
+```
+```bash
+cd Pharam
+```bash
+
 2. Create virtual environment and activate it:
 bash
 Copy
@@ -149,4 +151,4 @@ REST API (planned via DRF)
 This project is under development and not licensed yet. Will be open-sourced once stable.
 
 ❤️ Author
-Made with 💊 and 💻 by [Your Name] – Feel free to contribute or reach out!
+Made with 💊 and 💻 by Hammad  – Feel free to contribute or reach out!
