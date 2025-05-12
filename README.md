@@ -1,21 +1,22 @@
-# PharmaSupplyChain
 
-An advanced Django-based project that aims to streamline the pharmaceutical supply chain across pharmacies and suppliers. It provides secure access for different user types such as pharmacists, suppliers, admins, and customers.
+# 💊 PharmaSupplyChain
+
+A Django-based system that streamlines pharmaceutical supply chain operations between pharmacies and suppliers. It provides secure access for pharmacists, suppliers, admins, and customers.
 
 ---
 
 ## 🚀 Features
 
-- User authentication & authorization (pharmacist, supplier, admin, customer)
-- Pharmacy & supplier onboarding and verification
-- Medication management & categorization
-- Inventory control per pharmacy
-- Supplier offers and deals
-- Order processing between pharmacies and suppliers
-- Shipment tracking
-- Area-based delivery with customizable shipping costs
-- Notifications system
-- Action logging with audit trails
+- User authentication and role-based authorization  
+- Pharmacy and supplier onboarding with verification  
+- Medication and category management  
+- Per-pharmacy inventory control  
+- Supplier offers and discounts  
+- Order management between pharmacies and suppliers  
+- Shipment tracking with delivery zones  
+- Customizable shipping costs by area  
+- System notifications  
+- Audit logging for system transparency
 
 ---
 
@@ -23,132 +24,134 @@ An advanced Django-based project that aims to streamline the pharmaceutical supp
 
 ```plaintext
 pharma_project/
-├── accounts/            # Handles user management (Users model)
-├── pharmacies/          # Handles pharmacy logic & models
-├── suppliers/           # Supplier data and offers
-├── medications/         # Medications & categories
-├── inventory/           # Stock per pharmacy
-├── orders/              # Order processing
-├── shipments/           # Shipping logic
-├── notifications/       # System notifications
-├── auditlog/            # Tracks user actions
-├── areas/               # Cities and shipping data
+├── accounts/           # User management (custom User model)
+├── pharmacies/         # Pharmacy logic and models
+├── suppliers/          # Supplier data and offer management
+├── medications/        # Medication categories and details
+├── inventory/          # Per-pharmacy stock management
+├── orders/             # Order lifecycle
+├── shipments/          # Shipment tracking and delivery
+├── notifications/      # Notification triggers
+├── auditlog/           # Action logging
+├── areas/              # City and shipping zone management
 ├── manage.py
-└── pharma_project/      # Main settings and URL configuration
+└── pharma_project/     # Project settings and URL configuration
+```
+
+---
 
 ## 🔧 Getting Started (Local Setup)
-# 1. Clone the project:
+
+### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/DevOps-With-Hammad/Pharma.git
+cd Pharma
 ```
-```bash
-cd Pharam
-```bash
 
-2. Create virtual environment and activate it:
-bash
-Copy
-Edit
+### 2. Create and Activate a Virtual Environment
+
+```bash
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
-3. Install dependencies:
-bash
-Copy
-Edit
-pip install -r requirements.txt
-4. Configure .env (Optional but recommended):
-Create a .env file and set:
+```
 
-env
-Copy
-Edit
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env` file and add the following:
+
+```env
 DEBUG=True
 SECRET_KEY=your_secret_key
-DATABASE_URL=sqlite:///db.sqlite3  # or your PostgreSQL connection
-5. Apply Migrations:
-bash
-Copy
-Edit
+DATABASE_URL=sqlite:///db.sqlite3  # or your PostgreSQL connection string
+```
+
+### 5. Apply Database Migrations
+
+```bash
 python manage.py migrate
-6. Create Superuser:
-bash
-Copy
-Edit
+```
+
+### 6. Create a Superuser
+
+```bash
 python manage.py createsuperuser
-7. Run the Development Server:
-bash
-Copy
-Edit
+```
+
+### 7. Run the Development Server
+
+```bash
 python manage.py runserver
-🧠 How the App Will Be Built (Dev Plan)
-User System:
+```
 
-Start with accounts app (custom User model if needed)
+---
 
-Handle registration, login, roles (user_type)
+## 🧠 Development Plan
 
-Pharmacy/Supplier Onboarding:
+### User System
+- Start with a custom User model in the `accounts` app  
+- Implement login, registration, and user roles
 
-Create models for Pharmacy & Supplier linked to User
+### Pharmacy & Supplier Onboarding
+- Create linked models for pharmacies and suppliers  
+- Add verification workflows
 
-Add verification workflows
+### Area & Delivery Management
+- Implement delivery zones and shipping cost logic
 
-Area & Delivery Management:
+### Medication & Inventory
+- Categorize medications  
+- Track stock, expiry dates, and discounts per pharmacy
 
-Setup Areas model to handle delivery zones and shipping costs
+### Supplier Offers
+- Enable suppliers to post deals for medications
 
-Medication System:
+### Order Workflow
+- Pharmacies order from suppliers  
+- Auto-calculate shipping and total costs
 
-Add categories and medication details
+### Shipments & Notifications
+- Handle tracking by area  
+- Trigger system notifications
 
-Inventory Management:
+### Audit Logging
+- Record user actions across the system for admin visibility
 
-Inventory model per pharmacy for stock, expiry, discount
+---
 
-Supplier Offers:
+## 🤝 Contribution Guidelines
 
-Model offers from suppliers for medications
+1. Fork the repository  
+2. Create a feature branch: `feature/your-feature-name`  
+3. Commit your changes  
+4. Submit a pull request with a clear description
 
-Order Workflow:
+---
 
-Pharmacies place orders to suppliers
+## 🛠 Tech Stack
 
-Auto calculation of shipping, total, expected delivery
+- Django 5+  
+- Python 3.10+  
+- PostgreSQL / SQLite  
+- Bootstrap (for admin UI tweaks)  
+- Docker (planned)  
+- Django REST Framework (planned)
 
-Shipments & Notifications:
+---
 
-Shipment tracking between areas
+## 📖 License
 
-Notification triggers and logs
+This project is under active development and will be open-sourced once stabilized.
 
-Audit Logging:
+---
 
-Record user actions across the system for admin visibility
+## ❤️ Author
 
-🤝 Contribution Guidelines
-Fork the repo
-
-Create a new branch: feature/your-feature-name
-
-Make your changes
-
-Submit a pull request with clear description
-
-📌 Tech Stack
-Django 5+
-
-PostgreSQL / SQLite
-
-Python 3.10+
-
-Bootstrap (for admin UI tweaks if needed)
-
-Docker (planned for production)
-
-REST API (planned via DRF)
-
-📖 License
-This project is under development and not licensed yet. Will be open-sourced once stable.
-
-❤️ Author
-Made with 💊 and 💻 by Hammad  – Feel free to contribute or reach out!
+Made with 💊 and 💻 by **Hammad**  
+Feel free to contribute or reach out!
